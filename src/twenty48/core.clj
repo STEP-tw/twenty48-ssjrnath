@@ -6,11 +6,6 @@
   [grid]
   grid)
 
-(defn move-grid-left
-  "Moves an entire grid to the left"
-  [grid]
-  grid)
-
 (defn move-grid-down
   "Moves an entire grid down"
   [grid]
@@ -31,3 +26,7 @@
 (defn append 
   [n coll]
   (take n (concat coll (repeat n 0))))
+
+(def move-grid-left (partial map (comp (partial append 4) add split-by-2)))
+
+(reverse (append 4 `(2 4)))
