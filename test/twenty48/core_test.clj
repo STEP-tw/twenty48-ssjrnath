@@ -8,7 +8,10 @@
             (split-identical '(2 2 4 8)))))
   (testing "more than two consecutive identical numbers"
     (is (= '((2 2 2 2))
-            (split-identical '(2 2 2 2))))))
+            (split-identical '(2 2 2 2)))))
+  (testing "more than two consecutive identical numbers"
+    (is (= '((2 2) (4 4))
+            (split-identical '(2 2 4 4))))))
 
 (deftest spliting-identical-list-by-2
   (testing "split when list has 3 identical numbers"
@@ -22,6 +25,11 @@
   (testing "add all elements in list"
     (is (= '(4 2 4)
             (add '((2 2)(2)(4)))))))
+
+(deftest append-zeros
+  (testing "appending zeros to the given cloumn"
+    (is (= '(2 4 0 0)
+            (append 4 '(2 4))))))
 
 (deftest moving-grid-right
   (testing "rows with numbers that repeat"

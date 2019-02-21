@@ -27,3 +27,7 @@
 (def split-by-2 (comp (partial mapcat (partial partition-all 2)) split-identical))
 
 (def add (partial map (partial reduce +)))
+
+(defn append 
+  [n coll]
+  (take n (concat coll (repeat n 0))))
