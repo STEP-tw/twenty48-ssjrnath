@@ -30,3 +30,5 @@
 (def move-grid-left (partial map (comp (partial append 4) add split-by-2)))
 
 (def move-grid-right (partial map (comp reverse (partial append 4) add split-by-2 reverse)))
+
+(def cartesian (partial apply map vector))

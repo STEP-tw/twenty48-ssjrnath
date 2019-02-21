@@ -31,6 +31,17 @@
     (is (= '(2 4 0 0)
             (append 4 '(2 4))))))
 
+(deftest cartesion-product
+  (testing "applying cartesian product"
+    (is (= '((0 0 2 0)
+             (0 2 0 4)
+             (2 0 2 4)
+             ( 2 4 0 0))
+            (cartesian '((0 0 2 2)
+                         (0 2 0 4)
+                         (2 0 2 0)
+                         (0 4 4 0)))))))
+
 (deftest moving-grid-right
   (testing "rows with numbers that repeat"
     (is (= '((0 0 0 4)
