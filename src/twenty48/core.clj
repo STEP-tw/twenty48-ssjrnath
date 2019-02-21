@@ -20,3 +20,6 @@
   "Moves an entire grid up"
   [grid]
   grid)
+
+
+(def split-identical (comp (partial partition-by identity) (partial remove zero?)))

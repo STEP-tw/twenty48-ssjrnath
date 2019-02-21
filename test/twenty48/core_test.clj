@@ -2,6 +2,14 @@
   (:require [clojure.test :refer :all]
             [twenty48.core :refer :all]))
 
+(deftest splitting-identically
+  (testing "two consecutive identical numbers"
+    (is (= '((2 2)(4)(8))
+            (split-identical '(2 2 4 8)))))
+  (testing "more than two consecutive identical numbers"
+    (is (= '((2 2 2 2))
+            (split-identical '(2 2 2 2))))))
+
 (deftest moving-grid-right
   (testing "rows with numbers that repeat"
     (is (= '((0 0 0 4)
