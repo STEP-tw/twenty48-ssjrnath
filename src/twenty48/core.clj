@@ -25,3 +25,5 @@
 (def split-identical (comp (partial partition-by identity) (partial remove zero?)))
 
 (def split-by-2 (comp (partial mapcat (partial partition-all 2)) split-identical))
+
+(def add (partial map (partial reduce +)))

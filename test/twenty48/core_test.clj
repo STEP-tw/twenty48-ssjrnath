@@ -18,6 +18,11 @@
     (is (= '((2 2)(2 2))
             (split-by-2 '(2 2 2 2))))))
 
+(deftest adding-lists
+  (testing "add all elements in list"
+    (is (= '(4 2 4)
+            (add '((2 2)(2)(4)))))))
+
 (deftest moving-grid-right
   (testing "rows with numbers that repeat"
     (is (= '((0 0 0 4)
