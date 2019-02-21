@@ -34,3 +34,5 @@
 (def cartesian (partial apply map vector))
 
 (def move-grid-up (comp cartesian move-grid-left cartesian))
+
+(def move-grid-down (comp cartesian move-grid-right cartesian))
