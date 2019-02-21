@@ -29,7 +29,7 @@
 (deftest append-zeros
   (testing "appending zeros to the given cloumn"
     (is (= '(2 4 0 0)
-            (append 4 '(2 4))))))
+            (append [4 '(2 4)])))))
 
 (deftest cartesion-product
   (testing "applying cartesian product"
