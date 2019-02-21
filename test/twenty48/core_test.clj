@@ -10,6 +10,14 @@
     (is (= '((2 2 2 2))
             (split-identical '(2 2 2 2))))))
 
+(deftest spliting-identical-list-by-2
+  (testing "split when list has 3 identical numbers"
+    (is (= '((2 2)(2))
+            (split-by-2 '(2 2 2)))))
+  (testing "split when list has all identical numbers"
+    (is (= '((2 2)(2 2))
+            (split-by-2 '(2 2 2 2))))))
+
 (deftest moving-grid-right
   (testing "rows with numbers that repeat"
     (is (= '((0 0 0 4)
