@@ -29,4 +29,4 @@
 
 (def move-grid-left (partial map (comp (partial append 4) add split-by-2)))
 
-(reverse (append 4 `(2 4)))
+(def move-grid-right (partial map (comp reverse (partial append 4) add split-by-2 reverse)))
