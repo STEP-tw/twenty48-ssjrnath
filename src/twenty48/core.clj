@@ -7,7 +7,7 @@
 
 (def add (partial map (partial reduce +)))
 
-(def add-and-split (comp add split-by-2))
+(def split-and-add (comp add split-by-2))
 
 (defn append 
   [coll]
@@ -16,10 +16,10 @@
 (def cartesian (partial apply map vector))
 
 ; "Moves an entire grid to the left"
-(def move-grid-left (partial map (comp (partial append) (juxt count add-and-split))))
+(def move-grid-left (partial map (comp (partial append) (juxt count split-and-add))))
 
 ; "Moves an entire grid to the right"
-(def move-grid-right (partial map (comp reverse (partial append) (juxt count add-and-split) reverse)))
+(def move-grid-right (partial map (comp reverse (partial append) (juxt count split-and-add) reverse)))
 
 ; "Moves an entire grid to the right"
 (def move-grid-up (comp cartesian move-grid-left cartesian))
